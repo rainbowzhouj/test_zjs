@@ -1,0 +1,96 @@
+# 查看活动报表
+event_list:
+  "method": "get"
+  "url": "${base_url}/dab/event/get_all_events_the_id_and_name"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+
+
+# 查看单个活动推广报表
+event_one:
+  "method": "post"
+  "url": "${base_url}/dab/report/promotion_infos"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    "page": 1
+    "limit": 20
+    "size": 10
+    "startTime": ${startTime}
+    "endTime": ${endTime}
+    "eventIds":
+      - ${eventId}
+    "memberMobile": ${memberMobile}
+    "memberNickName": ""
+    "memberNo": ${memberNo}
+
+# 查看拼团报表
+group_buy_event_list:
+  "method": "get"
+  "url": "${base_url}/dab/group_buy_event/list"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "page": 1
+    "size": 1000
+
+
+
+# 查看单个拼团推广报表
+group_buy_event_one:
+  "method": "post"
+  "url": "${base_url}/dab/group_buy_event_order/group_buy_order_infos"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    "page": 1
+    "limit": 20
+    "size": 10
+    "startTime": ${startTime}
+    "endTime": ${endTime}
+    "eventIds":
+      - ${eventId}
+    "memberMobile": ${memberMobile}
+    "memberNickName": ""
+    "memberNo": ${memberNo}
+
+
+# 全员营销报表
+event_category:
+  "method": "get"
+  "url": "${base_url}/dab/event_category"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+
+# 全员营销报表
+event_category_list:
+  "method": "get"
+  "url": "${base_url}/dab/event_category/event_list"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "eventCategoryFirstId": "847066781074096128"
+    "eventCategorySecondId": ""
+
+
+
+
+# 全员营销报表
+event_category_one:
+  "method": "post"
+  "url": "${base_url}/dab/data/all_member_sell_info"
+  "headers":
+    "systemtoken": ${token}
+  "json":
+    "beginTime": ""
+    "endTime": ""
+    "page": 1
+    "pageSize": 10
+    "eventIds":
+      - ${eventId}
+    "eventCategoryFirstId": "847066781074096128"
+    "eventCategorySecondId": ""

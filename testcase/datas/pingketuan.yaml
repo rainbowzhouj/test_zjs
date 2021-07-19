@@ -1,0 +1,426 @@
+#新建资源
+#创建活动，类型可为： pt  拼课团 hd  优惠活动 wz  文章 rw  任务
+add:
+  "method": "get"
+  "url": "${base_url}/dab/common/get_new_resource_id"
+  "params":
+    "type": ${type}
+  "headers":
+    "systemtoken": ${token}
+
+# 新建拼课团
+add_group_buy_event:
+  "method": "post"
+  "url": "${base_url}/dab/group_buy_event/"
+  "headers":
+    'systemtoken': ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    "checkinQrcodeToggle": false
+    "banner": ""
+    "beginTime": 1615737600000
+    "endTime": 1617120000000
+    "cancelReviewToggle": true
+    "coverImage": ""
+    "guideImage": ""
+    "remindHours": 1
+    "descr": "1"
+    "detail": ""
+    "effectiveHours": 4
+    "effectiveType": "RELATIVE_DATE"
+    "customerServerShowVO":
+      "iconName": ""
+      "image": ""
+      "title": ""
+    "customerServerGuideOpened": false
+    "form": "[]"
+    "groupBuyEventTeamRules":
+      - "leaderPrice": 0
+        "maxNumber": 10
+        "memberPrice": 0
+        "size": 2
+        "begintNumber": 0
+
+    "resourceId": ${resourceId}
+    "robotRules": [ ]
+    "storeOrgIds": [
+        "768419663792685056"
+    ]
+    "tags": [
+
+    ]
+    "repeatJoin": false
+    "teamLastTimeType": "LIMITLESS"
+    "teamLastTimeHours": 0
+    "titile": ${titile}
+    "studentCanJoin": false
+    "remindTimeType": "BEGIN"
+    "eventCategorySecondId": ""
+    "eventCategorySecondIdName": ""
+    "eventCategoryFirstId": "754008091141341184"
+    "eventCategoryFirstIdName": "测试"
+    "price": "null"
+    "effectiveBeginTime": 1615447845000
+    "effectiveEndTime": 1615447845000
+
+#更新拼课团
+update_pkt:
+  "method": "put"
+  "url": "${base_url}/dab/group_buy_event/${group_buy_event_id}"
+  "headers":
+    'systemtoken': ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    "shareImageUrl": "https://apex-mini-dev.oss-cn-shanghai.aliyuncs.com/null/7f900cf29daa4b2caf991d9ba8da5788.jpg"
+    "customerServerShowVO":
+      "title": ""
+      "image": ""
+      "iconName": ""
+      "status": false
+    "customerServerGuideOpened": false
+    "id": ${group_buy_event_id}
+    "resourceId": ${resourceId}
+    "descr": ""
+    "titile": ${titile}
+    "beginTime": 1611590400000
+    "form": "[]"
+    "endTime": 1643040000000
+    "effectiveType": "RELATIVE_DATE"
+    "effectiveHours": 3
+    "banner": "https://apex-mini-dev.oss-cn-shanghai.aliyuncs.com/null/0f554cf567564d6ba5f1f797409004f0.jpg"
+    "coverImage": "https://apex-mini-dev.oss-cn-shanghai.aliyuncs.com/null/78db0280fc0a4f4fbc7fe2c49c58fa5d.jpg"
+    "cancelReviewToggle": false
+    "detail": ""
+    "price": 0
+    "storeOrgIds":
+      - "800758418357149696"
+    "tags": [ ]
+    "robotRules":
+      - "type": "END"
+        "offsetTime": 600000
+        "probability": 30
+        "id": "813830799525076992"
+        "begintNumber": "null"
+    "groupBuyEventTeamRules":
+      - "size": 3
+        "leaderPrice": 0
+        "memberPrice": 0
+        "maxNumber": 22
+        "canJoin": true
+        "begintNumber": 0
+    "stores":
+      - "name": "西城区"
+        "organizationId": "800758418357149696"
+        "longitude": ""
+        "latitude": ""
+        "address": "西城区"
+        "tel": ""
+        "length": "null"
+    "createdTime": 1614073982000
+    "updatedTime": 1614079695000
+    "enable": true
+    "teamLastTimeHours": 0
+    "teamLastTimeType": "LIMITLESS"
+    "repeatJoin": false
+    "effectiveEndTime": 1611590400000
+    "effectiveBeginTime": 1611072000000
+    "teamStatus": "null"
+    "teamLeader": "null"
+    "payCountdown": 0
+    "studentCanJoin": true
+    "trainingClassId": "null"
+    "eventCategorySecondId": ""
+    "eventCategoryFirstId": "754008091141341184"
+    "eventCategorySecondIdName": ""
+    "eventCategoryFirstIdName": "测试"
+    "guideImage": "https://apex-mini-dev.oss-cn-shanghai.aliyuncs.com/null/d53890f3a2d74e38ae521dcac2d13de4.jpg"
+    "remindHours": 1
+    "remindTimeType": "BEGIN"
+    "checkinQrcodeToggle": false
+
+#查看拼课团
+list_pkt:
+  "method": "get"
+  "url": "${base_url}/dab/group_buy_event/list"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "page": 1
+    "limit": 20
+    "size": 10
+    "searchWord": ${titile}
+    "eventSearchVO": "%7B%7D"
+
+#删除拼课团
+delete_pkt:
+  "method": "DELETE"
+  "url": "${base_url}/dab/group_buy_event/+ ${group_buy_event_id}"
+  "headers":
+    "systemtoken": ${token}
+  "data": ""
+
+#关联拼课团
+specification_detail_pkt:
+  "method": "PUT"
+  "url": "${base_url}/dab/group_buy_event/${group_buy_event_id}/specification"
+  "headers":
+    'systemtoken': ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    "groupBuyEventSpecificationDetails":
+      - "values": "语文,数学"
+        "enabled": true
+        "orderNo": 0
+        "trainingClassId": "699287789878902784"
+        "trainingClassName": "励暑语2"
+
+      - "values": "语文,英语"
+        "enabled": false
+        "orderNo": 1
+        "trainingClassId": ""
+        "trainingClassName": ""
+
+      - "values": "数学,数学"
+        "enabled": true
+        "orderNo": 2
+        "trainingClassId": ""
+        "trainingClassName": ""
+
+      - "values": "数学,英语"
+        "enabled": true
+        "orderNo": 3
+        "trainingClassId": ""
+        "trainingClassName": ""
+
+    "specificationConfs":
+      - "level": 1
+        "name": "一年级"
+        "values": "语文,数学"
+
+      - "level": 2
+        "name": "二年级"
+        "values": "数学,英语"
+
+
+#复制拼课团
+copy_pkt:
+  "method": "PUT"
+  "url": "${base_url}/dab/group_buy_event/${group_buy_event_id}/copy"
+  "headers":
+    "systemtoken": ${token}
+  "data": ""
+
+#发布拼课团
+enable_pkt:
+  "method": "PUT"
+  "url": "${base_url}/dab/group_buy_event/${group_buy_event_id}/enable?enable=${enable}"
+  "headers":
+    "systemtoken": ${token}
+  "data": ""
+
+#置顶拼课团
+recommend_pkt:
+  "method": "PUT"
+  "url": "${base_url}/dab/group_buy_event/${group_buy_event_id}/recommend?recommend=${recommend}"
+  "headers":
+    "systemtoken": ${token}
+  "data": ""
+
+#查看拼课团的参团列表
+find_team_pkt:
+  "method": "get"
+  "url": "${base_url}/dab/group_buy_event_order/teams?page=1&limit=20&size=10&groupBuyEventId=${group_buy_event_id}"
+  "headers":
+    "systemtoken": ${token}
+  "params": ""
+
+#查看拼课团的成团规格
+find_teamnumber_pkt:
+  "method": "get"
+  "url": "${base_url}/dab/group_buy_event_order/event_rule/numbers"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "groupBuyEventId": ${group_buy_event_id}
+
+# 查看渠道列表
+channel_list:
+  "method": "get"
+  "url": "${base_url}/dab/channel/list"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "page": 1
+    "size": 100
+
+# 添加渠道
+channel_add:
+  "method": "POST"
+  "url": "${base_url}/dab/channel"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "name": ${channel_name}
+    "descr": test_channel
+
+# 更新渠道
+channel_update:
+  "method": "PUT"
+  "url": "${base_url}/dab/channel/${channel_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "id": ${channel_id}
+    "name": ${channel_name}
+    "descr": test_channel_update
+
+# 删除渠道
+channel_delete:
+  "method": "delete"
+  "url": "${base_url}/dab/channel/${channel_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json": ""
+
+# 查看门店列表
+store_list:
+  "method": "get"
+  "url": "${base_url}/dab/organizations/store_list"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "page": 1
+    "size": 100
+
+# 查看组织架构列表
+organizations_list:
+  "method": "get"
+  "url": "${base_url}/dab/organizations"
+  "headers":
+    "systemtoken": ${token}
+  "params": ""
+
+# 添加区域
+area_add:
+  "method": "POST"
+  "url": "${base_url}/dab/organizations/area"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "areaName": ${area_name}
+    "type": "AREA"
+
+# 更新区域
+area_update:
+  "method": "PUT"
+  "url": "${base_url}/dab/organizations/area/${area_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "id": ${area_id}
+    "areaName": ${area_name}
+    "type": "AREA"
+
+# 删除区域
+area_delete:
+  "method": "delete"
+  "url": "${base_url}/dab/organizations/area/${area_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json": ""
+
+#添加校区
+store_add:
+  "method": "post"
+  "url": "${base_url}/dab/organizations/store"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "storeName": ${store_name}
+    "address": "创大名路"
+    "parentId": "822109400178679808"
+    "parentName": "auto20210318-150244"
+    "tel": "213132655"
+    "type": "STORE"
+    "latitude": ""
+    "longitude": ""
+
+#更新校区
+store_update:
+  "method": "PUT"
+  "url": "${base_url}/dab/organizations/store/${store_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "address": "创大名路"
+    "id": ${store_id}
+    "storeName": ${store_name}
+    "parentId": "822109400178679808"
+    "parentName": "auto20210318-150244"
+    "tel": "213132655"
+    "type": "STORE"
+    "latitude": ""
+    "longitude": ""
+
+#删除校区
+store_delete:
+  "method": "delete"
+  "url": "${base_url}/dab/organizations/store/${store_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json": ""
+
+
+#为单个拼课团添加门店及渠道
+add_launch:
+  "method": "post"
+  "url": "${base_url}/dab/group_buy_event/launch"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "page": 1
+    "size": 10
+    "channelIds":
+      - ${channelIds}
+    "groupBuyEventId": ${group_buy_event_id}
+    "orgIds":
+      - ${organizationId}
+
+orders_group_buy_event:
+  "method": "GET"
+  "url": "${base_url}/dab/group_buy_event_order/orders"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "params":
+    "page": 1
+    "limit": 20
+    "size": 10
+    "groupBuyEventId": ${group_buy_event_id}
+    "keyWord": ""
+    "status": ""
+    "orderStatus": ""
+    "pamentStatus": ""
+order_status:
+  "method": "GET"
+  "url": "${base_url}/dab/group_buy_event_order/search"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "page": 1
+    "size": 10
+    "limit": 20
+    "groupBuyEventId": ${group_buy_event_id}
+    "keyWord": ""
+    "status": ${status}
+

@@ -1,0 +1,136 @@
+# 查看渠道列表
+channel_list:
+  "method": "get"
+  "url": "${base_url}/dab/channel/list"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "page": 1
+    "size": 100
+
+# 添加渠道
+channel_add:
+  "method": "POST"
+  "url": "${base_url}/dab/channel"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "name": ${channel_name}
+    "descr": test_channel
+
+# 更新渠道
+channel_update:
+  "method": "PUT"
+  "url": "${base_url}/dab/channel/${channel_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "id": ${channel_id}
+    "name": ${channel_name}
+    "descr": test_channel_update
+
+# 删除渠道
+channel_delete:
+  "method": "delete"
+  "url": "${base_url}/dab/channel/${channel_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json": ""
+
+# 添加区域
+area_add:
+  "method": "POST"
+  "url": "${base_url}/dab/organizations/area"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "areaName": ${area_name}
+    "type": "AREA"
+
+# 更新区域
+area_update:
+  "method": "PUT"
+  "url": "${base_url}/dab/organizations/area/${area_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "id": ${area_id}
+    "areaName": ${area_name}
+    "type": "AREA"
+
+# 删除区域
+area_delete:
+  "method": "delete"
+  "url": "${base_url}/dab/organizations/area/${area_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json": ""
+
+# 查看门店列表
+store_list:
+  "method": "get"
+  "url": "${base_url}/dab/organizations/store_list"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+    "page": 1
+    "size": 100
+
+# 查看组织架构列表
+organizations_list:
+  "method": "get"
+  "url": "${base_url}/dab/organizations"
+  "headers":
+    "systemtoken": ${token}
+  "params": ""
+
+
+#添加校区
+store_add:
+  "method": "post"
+  "url": "${base_url}/dab/organizations/store"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "storeName": ${store_name}
+    "address": "创大名路"
+    "parentId": "822109400178679808"
+    "parentName": "auto20210318-150244"
+    "tel": "213132655"
+    "type": "STORE"
+    "latitude": ""
+    "longitude": ""
+
+#更新校区
+store_update:
+  "method": "PUT"
+  "url": "${base_url}/dab/organizations/store/${store_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json":
+    "address": "创大名路"
+    "id": ${store_id}
+    "storeName": ${store_name}
+    "parentId": "822109400178679808"
+    "parentName": "auto20210318-150244"
+    "tel": "213132655"
+    "type": "STORE"
+    "latitude": ""
+    "longitude": ""
+
+#删除校区
+store_delete:
+  "method": "delete"
+  "url": "${base_url}/dab/organizations/store/${store_id}"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': "application/json;charset=UTF-8"
+  "json": ""

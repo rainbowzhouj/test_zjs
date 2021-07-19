@@ -1,0 +1,235 @@
+# 活动类目列表
+eventCategory:
+  "method": "get"
+  "url": "${base_url}/auto/eventCategory/list"
+  "headers":
+    "systemtoken": ${token}
+  "params":
+
+
+# 推送计划排期查询
+pushPlan:
+  "method": "post"
+  "url": "${base_url}/auto/pushPlan/items"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    "beginDate": ${beginDate}
+    "endDate": ${endDate}
+
+# 营销任务列表
+taskList:
+  "method": "post"
+  "url": "${base_url}/auto/task/list"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    "pageNum": ${pageNum}
+    "pageSize": ${pageSize}
+
+
+# 任务创建
+taskCreate:
+  "method": "post"
+  "url": "${base_url}/auto/task/create"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    create_by: "周晶"
+    description: ''
+    endTime: 2022-07-09 23:59
+    eventList:
+      - beginTime: '2021-07-07'
+        endTime: '2022-07-01'
+        eventId: '862364211591544832'
+        eventName: "自动化测试"
+        eventType: '0'
+        firstCategoryName: "测试部"
+        id: ''
+        promotionDesc: ''
+        published: 'null'
+        secondCategoryName: 'null'
+        showOrder: 1
+    miniProgramVisible: ${miniProgramVisible}
+    name: ${name}
+    needPushFlag: ${needPushFlag}
+    orgId: '4886'
+    orgName: "个辅教学（兼职）"
+    picUrl: ${picUrl}
+    pushPlanParam:
+      pushDate: ''
+      pushDateTime: ''
+      pushHour: ''
+      pushOrgList: [ ]
+      pushWorkerList: [ ]
+    startTime: 2021-07-09 00:00
+    taskRewardList: [ ]
+    visibleCrowd: ${visibleCrowd}
+
+# 任务创建--需推送
+taskCreate_needPushFlag:
+  "method": "post"
+  "url": "${base_url}/auto/task/create"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    create_by: "周晶"
+    description: ''
+    endTime: 2021-07-09 23:59
+    eventList:
+      - beginTime: '2021-07-07'
+        endTime: '2022-07-01'
+        eventId: '862364211591544832'
+        eventName: "口径测试"
+        eventType: '0'
+        firstCategoryName: "测试部"
+        id: ''
+        promotionDesc: ''
+        published: 'null'
+        secondCategoryName: 'null'
+        showOrder: 1
+    miniProgramVisible: '0'
+    name: "推送排期"
+    needPushFlag: '1'
+    orgId: '4886'
+    orgName: "个辅教学（兼职）"
+    picUrl: ''
+    pushPlanParam:
+      pushDate: '2021-07-10'
+      pushDateTime: 2021-7-10 10:00
+      pushHour: '10'
+      pushOrgList:
+        - id: 44
+          name: "全日制事业部"
+      pushWorkerList: [ ]
+      timeStamp: 1625824358609
+    startTime: 2021-07-09 00:00
+    taskRewardList: [ ]
+
+# 任务修改
+task_Modify:
+  "method": "post"
+  "url": "${base_url}/auto/task/modify"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    create_by: "周晶"
+    description: ''
+    endTime: 2021-07-09 23:59
+    eventList:
+      - beginTime: '2021-07-07'
+        endTime: '2022-07-01'
+        eventId: '862364211591544832'
+        eventName: "口径测试"
+        eventType: '0'
+        firstCategoryName: "测试部"
+        id: ''
+        promotionDesc: ''
+        published: 'null'
+        secondCategoryName: 'null'
+        showOrder: 1
+    miniProgramVisible: '0'
+    name: "推送排期"
+    needPushFlag: '1'
+    orgId: '4886'
+    orgName: "个辅教学（兼职）"
+    picUrl: ''
+    pushPlanParam:
+      pushDate: '2021-07-10'
+      pushDateTime: 2021-7-10 10:00
+      pushHour: '10'
+      pushOrgList:
+        - id: 44
+          name: "全日制事业部"
+      pushWorkerList: [ ]
+      timeStamp: 1625824358609
+    startTime: 2021-07-09 00:00
+    taskRewardList: [ ]
+
+# 任务发布
+taskPub:
+  "method": "post"
+  "url": "${base_url}/auto/task/pub"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    taskId: ${taskId}
+
+
+# 任务删除
+taskDelete:
+  "method": "post"
+  "url": "${base_url}/auto/task/delete"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    taskId: ${taskId}
+
+
+# 任务置顶
+taskTop:
+  "method": "post"
+  "url": "${base_url}/auto/task/top"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    topId: ${topId}
+
+# 任务置顶
+taskminiAppVisible:
+  "method": "post"
+  "url": "${base_url}/auto/task/miniAppVisible"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    taskId: ${taskId}
+    showFlag: ${showFlag}
+
+# 任务详情
+taskDetail:
+  "method": "post"
+  "url": "${base_url}/auto/task/detail"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    taskId: ${taskId}
+
+# 任务下架
+taskoffShelf:
+  "method": "post"
+  "url": "${base_url}/auto/task/offShelf"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    taskId: ${taskId}
+
+# 任务推送
+taskpushPlan:
+  "method": "post"
+  "url": "${base_url}/auto/pushPlan/push"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    automationTaskId: 100
+    id: 107
+    pushDate: 2021-7-31
+    pushHour: '12'
+    pushOrgList:
+      - id: '44'
+        name: "全日制事业部"
+        orgName: 'null'
+    pushWorkerList: [ ]
+    targetId: 100
+    targetType: '0'

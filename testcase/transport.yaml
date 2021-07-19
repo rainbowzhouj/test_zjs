@@ -1,0 +1,11 @@
+automationTaskId: 100
+id: 107
+pushDate: 2021-7-31
+pushHour: '12'
+pushOrgList:
+- id: '44'
+  name: "全日制事业部"
+  orgName: 'null'
+pushWorkerList: []
+targetId: 100
+targetType: '0'
