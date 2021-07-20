@@ -59,7 +59,7 @@ class Pingketuan(BaseApi):
         # data = {
         #     "method": "DELETE",
         #     "url": f"{self.base_url}/group_buy_event/" + group_buy_event_id,
-        #     "headers": {'X-Token': self.token},
+        #     "headers": {'systemtoken': self.token},
         #     "data": {}
         # }
         # return self.send(data)
@@ -75,7 +75,7 @@ class Pingketuan(BaseApi):
         # data = {
         #     "method": "PUT",
         #     "url": f"{self.base_url}/group_buy_event/" + group_buy_event_id + "/copy",
-        #     "headers": {'X-Token': self.token},
+        #     "headers": {'systemtoken': self.token},
         #     "data": {}
         # }
         self.params["group_buy_event_id"] = group_buy_event_id
@@ -86,7 +86,7 @@ class Pingketuan(BaseApi):
         # data = {
         #     "method": "PUT",
         #     "url": f"{self.base_url}/group_buy_event/" + group_buy_event_id + "/enable",
-        #     "headers": {'X-Token': self.token},
+        #     "headers": {'systemtoken': self.token},
         #     "data": {"enable": enable}
         # }
         self.params["group_buy_event_id"] = group_buy_event_id
@@ -98,7 +98,7 @@ class Pingketuan(BaseApi):
         # data = {
         #     "method": "PUT",
         #     "url": f"{self.base_url}/group_buy_event/" + group_buy_event_id + "/recommend",
-        #     "headers": {'X-Token': self.token},
+        #     "headers": {'systemtoken': self.token},
         #     "data": {"recommend": recommend}
         # }
         # return self.send(data)
@@ -111,7 +111,7 @@ class Pingketuan(BaseApi):
         # data = {
         #     "method": "get",
         #     "url": f"{self.base_url}/group_buy_event_order/teams",
-        #     "headers": {'X-Token': self.token},
+        #     "headers": {'systemtoken': self.token},
         #     "params": {
         #         "page": 1,
         #         "limit": 20,
@@ -127,7 +127,7 @@ class Pingketuan(BaseApi):
         # data = {
         #     "method": "get",
         #     "url": f"{self.base_url}/group_buy_event_order/event_rule/numbers",
-        #     "headers": {'X-Token': self.token},
+        #     "headers": {'systemtoken': self.token},
         #     "params": {
         #         "groupBuyEventId": group_buy_event_id
         #     }
@@ -140,7 +140,7 @@ class Pingketuan(BaseApi):
         data = {
             "method": "get",
             "url": f"{self.base_url}/group_buy_event_order/excel_teams",
-            "headers": {'X-Token': self.token, 'Content-Type': 'text/plain;charset=UTF-8'},
+            "headers": {'systemtoken': self.token, 'Content-Type': 'text/plain;charset=UTF-8'},
             "params": {
                 "status": status,
                 "groupBuyEventId": group_buy_event_id
@@ -157,7 +157,7 @@ class Pingketuan(BaseApi):
         data = {
             "method": "post",
             "url": f"{self.base_url}/group_buy_event/url_list_excel",
-            "headers": {'X-Token': self.token, 'Content-Type': 'application/json;charset=UTF-8'},
+            "headers": {'systemtoken': self.token, 'Content-Type': 'application/json;charset=UTF-8'},
             "json": {
                 "page": 1,
                 "size": 10,
@@ -179,7 +179,7 @@ class Pingketuan(BaseApi):
         data = {
             "method": "GET",
             "url": "https://apex-mini-dev.oss-cn-shanghai.aliyuncs.com/null/mocha_qrcode_4389708749976803471.png",
-            "headers": {'X-Token': self.token},
+            "headers": {'systemtoken': self.token},
             "params": {}
         }
         return self.send(data)
@@ -192,7 +192,7 @@ class Pingketuan(BaseApi):
         # data = {
         #     "method": "GET",
         #     "url": f"{self.base_url}/group_buy_event_order/search",
-        #     "headers": {'X-Token': self.token},
+        #     "headers": {'systemtoken': self.token},
         #     "params": {
         #         "page": 1,
         #         "size": 100,
@@ -223,7 +223,7 @@ class Pingketuan(BaseApi):
         data = {
             "method": "PUT",
             "url": f"{self.base_url}/group_buy_event_order/" + orderId + "/canceled",
-            "headers": {'X-Token': self.token},
+            "headers": {'systemtoken': self.token},
             "params": {}
         }
         return self.send(data)
@@ -232,7 +232,7 @@ class Pingketuan(BaseApi):
         data = {
             "method": "POST",
             "url": f"{self.base_url}/workers",
-            "headers": {'X-Token': self.token},
+            "headers": {'systemtoken': self.token},
             "json": {"name": name,
                      "mobile": mobile,
                      "department": "",
@@ -245,7 +245,7 @@ class Pingketuan(BaseApi):
         data = {
             "method": "GET",
             "url": f"{self.base_url}/workers",
-            "headers": {'X-Token': self.token},
+            "headers": {'systemtoken': self.token},
             "params": {
                 "page": 1,
                 "size": 10000,
@@ -262,7 +262,7 @@ class Pingketuan(BaseApi):
         data = {
             "method": "PUT",
             "url": f"{self.base_url}/workers/" + workerId,
-            "headers": {'X-Token': self.token},
+            "headers": {'systemtoken': self.token},
             "json": {"id": workerId, "name": name, "memberId": mobile, "department": "",
                      "mobile": "11111111111", "workerNo": workerNo, "onWork": onWork, "createdTime": 1618999283000,
                      "updatedTime": 1619000553997, "position": None, "wechatQrcode": None, "headImage": None,
@@ -273,7 +273,7 @@ class Pingketuan(BaseApi):
     def delete_workers(self, workerId):
         data = {"method": "DELETE",
                 "url": f"{self.base_url}/workers/" + workerId,
-                "headers": {'X-Token': self.token},
+                "headers": {'systemtoken': self.token},
                 "params": {}
                 }
         return self.send(data)

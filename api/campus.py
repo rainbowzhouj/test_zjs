@@ -12,7 +12,7 @@ class Campus(BaseApi):
             "params": {"id": id},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -30,7 +30,7 @@ class Campus(BaseApi):
                      },
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -47,7 +47,7 @@ class Campus(BaseApi):
                      "campusLatitude": "", "dictType": "2", "dictSync": "0", "dictEditStatus": "0"},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -63,7 +63,7 @@ class Campus(BaseApi):
                      },
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -75,7 +75,7 @@ class Campus(BaseApi):
             "params": {"id": id},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -95,7 +95,7 @@ class Campus(BaseApi):
                      },
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)

@@ -10,7 +10,7 @@ class Huodongyuyue(BaseApi):
             "method": "get",
             "url": f"{self.base_url}/common/get_new_resource_id",
             "params": {"type": type},
-            "headers": {'SysTemToken': self.token}
+            "headers": {'systemtoken': self.token}
         }
         return self.send(data)
 
@@ -20,7 +20,7 @@ class Huodongyuyue(BaseApi):
             "method": "put",
             "url": f"{self.base_url}/event/" + event_id,
             "headers": {
-                'SysTemToken': self.token,
+                'systemtoken': self.token,
                 'Content-Type': 'application/json;charset=UTF-8'
             },
             "json": {
@@ -103,7 +103,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "get",
             "url": f"{self.base_url}/event/list",
-            "headers": {'SysTemToken': self.token},
+            "headers": {'systemtoken': self.token},
             "params": {
                 "page": 1,
                 "limit": 50,
@@ -119,7 +119,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "DELETE",
             "url": f"{self.base_url}/event/" + event_id,
-            "headers": {'SysTemToken': self.token},
+            "headers": {'systemtoken': self.token},
             "data": {}
         }
         return self.send(data)
@@ -128,7 +128,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "PUT",
             "url": f"{self.base_url}/event/" + event_id + "/copy",
-            "headers": {'SysTemToken': self.token},
+            "headers": {'systemtoken': self.token},
             "data": {}
         }
         return self.send(data)
@@ -138,7 +138,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "PUT",
             "url": f"{self.base_url}/event/" + event_id + "/publish",
-            "headers": {'SysTemToken': self.token},
+            "headers": {'systemtoken': self.token},
             "data": {"publish": publish}
         }
         return self.send(data)
@@ -148,7 +148,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "PUT",
             "url": f"{self.base_url}/event/" + event_id + "/recommend",
-            "headers": {'SysTemToken': self.token},
+            "headers": {'systemtoken': self.token},
             "data": {"recommend": recommend}
         }
         return self.send(data)
@@ -169,7 +169,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "post",
             "url": f"{self.base_url}/event_orders/get_order_list",
-            "headers": {'SysTemToken': self.token},
+            "headers": {'systemtoken': self.token},
             "params": {
                 "page": 1,
                 "size": 10,
@@ -186,7 +186,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "get",
             "url": f"{self.base_url}/event_orders/search",
-            "headers": {'SysTemToken': self.token},
+            "headers": {'systemtoken': self.token},
             "params": {
                 "page": 1,
                 "size": 20,
@@ -204,7 +204,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "post",
             "url": f"{self.base_url}/event_checkin_qrcode/list",
-            "headers": {'SysTemToken': self.token, 'Content-Type': 'application/json;charset=UTF-8'},
+            "headers": {'systemtoken': self.token, 'Content-Type': 'application/json;charset=UTF-8'},
             "params": {
                 "page": 1,
                 "size": 20
@@ -223,7 +223,7 @@ class Huodongyuyue(BaseApi):
         data = {
             "method": "PUT",
             "url": f"{self.base_url}/event_orders/" + event_id + "/canceled",
-            "headers": {'SysTemToken': self.token},
+            "headers": {'systemtoken': self.token},
             "data": {}
         }
         return self.send(data)

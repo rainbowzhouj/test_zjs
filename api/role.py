@@ -12,7 +12,7 @@ class Role(BaseApi):
             "params": {"roleType": roleType},
             "headers" : {
             'Content-Type': 'application/json;charset=UTF-8',
-            'SysTemToken': self.token
+            'systemtoken': self.token
         }
         }
         return self.send(data)
@@ -24,7 +24,7 @@ class Role(BaseApi):
             "params": {"roleId": roleId},
             "headers" : {
             'Content-Type': 'application/json;charset=UTF-8',
-            'SysTemToken': self.token
+            'systemtoken': self.token
         }
         }
         return self.send(data)
@@ -38,7 +38,7 @@ class Role(BaseApi):
                          "permissionIds": [ ]},
             "headers" : {
             'Content-Type': 'application/json;charset=UTF-8',
-            'SysTemToken': self.token
+            'systemtoken': self.token
         }
         }
         return self.send(data)
@@ -54,7 +54,7 @@ class Role(BaseApi):
                                           131, ]},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -67,7 +67,7 @@ class Role(BaseApi):
                         "roleType": roleType},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -79,7 +79,7 @@ class Role(BaseApi):
             "params": {},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }}
         return self.send(data)
 
@@ -90,7 +90,7 @@ class Role(BaseApi):
             "params": {},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }}
         return self.send(data)
 
@@ -103,7 +103,7 @@ class Role(BaseApi):
                          },
             "headers" : {
             'Content-Type': 'application/json;charset=UTF-8',
-            'SysTemToken': self.token
+            'systemtoken': self.token
         }
         }
         return self.send(data)
@@ -117,7 +117,7 @@ class Role(BaseApi):
                      },
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -129,7 +129,7 @@ class Role(BaseApi):
             "json": {"pageNum": pageNum, "roleName": roleName, "pageSize": pageSize},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -141,7 +141,7 @@ class Role(BaseApi):
             "params": {"roleId": roleId},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -160,7 +160,7 @@ class Role(BaseApi):
                                           "organizationIds": ""}]},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)
@@ -178,7 +178,7 @@ class Role(BaseApi):
                                           "organizationIds": ""}]},
             "headers": {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'SysTemToken': self.token
+                'systemtoken': self.token
             }
         }
         return self.send(data)

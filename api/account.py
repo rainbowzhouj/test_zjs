@@ -11,7 +11,7 @@ class Account(BaseApi):
             "method": "post",
             "url": "https://zy-zjs-dev.chinapex.com.cn/service/authority/api/account/saveOrUpdate",
             "headers": {
-                "SysTemToken": self.token,
+                "systemtoken": self.token,
                 'Content-Type': 'application/json;charset=UTF-8',
             },
             "json": {
@@ -29,7 +29,7 @@ class Account(BaseApi):
             "method": "post",
             "url": "https://zy-zjs-dev.chinapex.com.cn/service/authority/api/account/saveOrUpdate",
             "headers": {
-                "SysTemToken": self.token
+                "systemtoken": self.token
             },
             "json": {
                 "id": id,
@@ -47,7 +47,7 @@ class Account(BaseApi):
             "method": "post",
             "url": "https://zy-zjs-dev.chinapex.com.cn/service/authority/api/account/getAccountList",
             "headers": {
-                "SysTemToken": self.token
+                "systemtoken": self.token
             },
             "json": {
                 "staffName": staffName,
@@ -64,7 +64,7 @@ class Account(BaseApi):
         data={
             "method": "get",
             "url": "https://zy-zjs-dev.chinapex.com.cn/service/authority/api/account/getAccountDetail",
-            "headers": {"SysTemToken": self.token,
+            "headers": {"systemtoken": self.token,
                        'Content-Type': 'application/json;charset=UTF-8'},
             "params": {
                        "accountId": accountId}
@@ -76,7 +76,7 @@ class Account(BaseApi):
         data = {
             "method": "post",
             "url": "https://zy-zjs-dev.chinapex.com.cn/service/authority/api/account/changeAccountStatus",
-            "headers": {"SysTemToken": self.token},
+            "headers": {"systemtoken": self.token},
             "json": {
                 "id": id,
                 "status": status}
