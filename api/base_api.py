@@ -19,6 +19,7 @@ class BaseApi:
                     env["env_select"][env["default"]])
         # print(self.base_url)
         self.token = self.get_token()
+        #userId：TanNengWen
         #self.token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE2MjY3NzM1NTEsInN1YiI6IlRhbk5lbmdXZW4tMTMiLCJjcmVhdGVkIjoxNjI2MTY4NzUxNjA3fQ.GH6q7YyXxZTw2m243rMgFLDuTRvV_K67T32E2A3DEmyu6QwYQIeK2KYPiigxQQ2KJLpOSQ6HGptRsKQwJb9Few"
 
     def get_token(self):

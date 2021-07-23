@@ -1,11 +1,36 @@
-automationTaskId: 100
-id: 107
-pushDate: 2021-7-31
-pushHour: '12'
-pushOrgList:
-- id: '44'
-  name: "全日制事业部"
-  orgName: 'null'
-pushWorkerList: []
-targetId: 100
-targetType: '0'
+create_by: "\u5468\u6676"
+delEventRelIds: ''
+description: ''
+endTime: 2021-07-21 23:59
+eventList:
+- automationTaskId: 214
+  eventId: '867412408176058368'
+  eventName: "0721\u6743\u9650\u63A7\u5236"
+  eventType: '0'
+  id: 701
+  promotionDesc: ''
+  showOrder: 1
+  showUrl: ''
+id: '214'
+miniProgramVisible: '1'
+name: zidonghuaceshi
+needPushFlag: '0'
+orgId: '4608'
+orgName: "\u7EC8\u7AEF\u8D4B\u80FD\u5904"
+picUrl: https://marketingcentertest-1252877917.cos.ap-guangzhou.myqcloud.com/55f842f2e0764779a136fa94c5ff4d80.jpg
+pushPlanParam:
+  pushDate: ''
+  pushDateTime: ''
+  pushHour: ''
+  pushOrgList: []
+  pushWorkerList: []
+startTime: 2021-07-21 16:45
+taskRewardList:
+- automationTaskId: 214
+  endRanking: 2
+  getTime: '1626858643127442013'
+  id: 26
+  rewardName: telephone
+  showOrder: 1
+  startRanking: 1
+visibleCrowd: '0'

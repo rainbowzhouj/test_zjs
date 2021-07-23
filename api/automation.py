@@ -90,11 +90,11 @@ class Auto(BaseApi):
 
     def taskDelete(self, taskId):
         self.params['taskId']=taskId
-        return self.send(self.data["taskPub"])
+        return self.send(self.data["taskDelete"])
 
     def taskTop(self, topId):
         self.params['topId']=topId
-        return self.send(self.data["topId"])
+        return self.send(self.data["taskTop"])
 
 
     def taskminiAppVisible(self, taskId,showFlag):

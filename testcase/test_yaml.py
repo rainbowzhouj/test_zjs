@@ -37,7 +37,7 @@ if __name__ == '__main__':
     print(api.send(api.data).text)
 
 def test_yaml():
-    env = {"id":107,"automationTaskId":100,"pushDate":"2021-7-31","pushHour":"12","pushWorkerList":[],"pushOrgList":[{"id":"44","orgName":"null","name":"全日制事业部"}],"targetType":"0","targetId":100}
+    env = {"name":"zidonghuaceshi","create_by":"周晶","orgId":"4608","orgName":"终端赋能处","startTime":"2021-07-21 16:45","endTime":"2021-07-21 23:59","miniProgramVisible":"1","description":"","visibleCrowd":"0","picUrl":"https://marketingcentertest-1252877917.cos.ap-guangzhou.myqcloud.com/55f842f2e0764779a136fa94c5ff4d80.jpg","needPushFlag":"0","eventList":[{"id":701,"automationTaskId":214,"eventType":"0","eventId":"867412408176058368","eventName":"0721权限控制","promotionDesc":"","showOrder":1,"showUrl":""}],"pushPlanParam":{"pushDate":"","pushHour":"","pushDateTime":"","pushWorkerList":[],"pushOrgList":[]},"taskRewardList":[{"id":26,"automationTaskId":214,"startRanking":1,"endRanking":2,"rewardName":"telephone","showOrder":1,"getTime":"1626858643127442013"}],"id":"214","delEventRelIds":""}
     with open("transport.yaml", "w") as f:
         yaml.safe_dump(data=env, stream=f)
 

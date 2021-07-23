@@ -42,22 +42,22 @@ taskCreate:
     description: ''
     endTime: 2022-07-09 23:59
     eventList:
-      - beginTime: '2021-07-07'
-        endTime: '2022-07-01'
-        eventId: '862364211591544832'
-        eventName: "自动化测试"
+      - beginTime: '2021-07-21'
+        endTime: '2021-09-14'
+        eventId: '867412408176058368'
+        eventName: "0721权限控制"
         eventType: '0'
-        firstCategoryName: "测试部"
+        firstCategoryName: "测试"
         id: ''
         promotionDesc: ''
         published: 'null'
-        secondCategoryName: 'null'
+        secondCategoryName: "拼团"
         showOrder: 1
     miniProgramVisible: ${miniProgramVisible}
     name: ${name}
     needPushFlag: ${needPushFlag}
-    orgId: '4886'
-    orgName: "个辅教学（兼职）"
+    orgId: '4608'
+    orgName: "终端赋能处"
     picUrl: ${picUrl}
     pushPlanParam:
       pushDate: ''
@@ -65,7 +65,7 @@ taskCreate:
       pushHour: ''
       pushOrgList: [ ]
       pushWorkerList: [ ]
-    startTime: 2021-07-09 00:00
+    startTime: 2021-07-21 00:00
     taskRewardList: [ ]
     visibleCrowd: ${visibleCrowd}
 
@@ -79,7 +79,7 @@ taskCreate_needPushFlag:
   "json":
     create_by: "周晶"
     description: ''
-    endTime: 2021-07-09 23:59
+    endTime: 2022-07-09 23:59
     eventList:
       - beginTime: '2021-07-07'
         endTime: '2022-07-01'
@@ -99,8 +99,8 @@ taskCreate_needPushFlag:
     orgName: "个辅教学（兼职）"
     picUrl: ''
     pushPlanParam:
-      pushDate: '2021-07-10'
-      pushDateTime: 2021-7-10 10:00
+      pushDate: '2022-07-10'
+      pushDateTime: 2022-7-10 10:00
       pushHour: '10'
       pushOrgList:
         - id: 44
@@ -119,37 +119,41 @@ task_Modify:
     'Content-Type': 'application/json;charset=UTF-8'
   "json":
     create_by: "周晶"
+    delEventRelIds: ''
     description: ''
-    endTime: 2021-07-09 23:59
+    endTime: 2021-07-21 23:59
     eventList:
-      - beginTime: '2021-07-07'
-        endTime: '2022-07-01'
-        eventId: '862364211591544832'
-        eventName: "口径测试"
+      - automationTaskId: 214
+        eventId: '867412408176058368'
+        eventName: "0721权限控制"
         eventType: '0'
-        firstCategoryName: "测试部"
-        id: ''
+        id: 701
         promotionDesc: ''
-        published: 'null'
-        secondCategoryName: 'null'
         showOrder: 1
-    miniProgramVisible: '0'
-    name: "推送排期"
-    needPushFlag: '1'
-    orgId: '4886'
-    orgName: "个辅教学（兼职）"
-    picUrl: ''
+        showUrl: ''
+    id: '214'
+    miniProgramVisible: ${miniProgramVisible}
+    name: ${name}
+    needPushFlag: ${needPushFlag}
+    orgId: '4608'
+    orgName: "终端赋能处"
+    picUrl: ${picUrl}
     pushPlanParam:
-      pushDate: '2021-07-10'
-      pushDateTime: 2021-7-10 10:00
-      pushHour: '10'
-      pushOrgList:
-        - id: 44
-          name: "全日制事业部"
+      pushDate: ''
+      pushDateTime: ''
+      pushHour: ''
+      pushOrgList: [ ]
       pushWorkerList: [ ]
-      timeStamp: 1625824358609
-    startTime: 2021-07-09 00:00
-    taskRewardList: [ ]
+    startTime: 2021-07-21 16:45
+    taskRewardList:
+      - automationTaskId: 214
+        endRanking: 2
+        getTime: '1626858643127442013'
+        id: 26
+        rewardName: telephone
+        showOrder: 1
+        startRanking: 1
+    visibleCrowd: ${visibleCrowd}
 
 # 任务发布
 taskPub:

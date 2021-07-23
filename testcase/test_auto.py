@@ -28,10 +28,14 @@ class TestAuto:
         r=self.auto.taskList(pageNum=pageNum,pageSize=pageSize)
         assert r.json()['code'] == "200"
 
-    @pytest.mark.parametrize("miniProgramVisible,name,needPushFlag,picUrl,visibleCrowd",[["0", "接口自动化测试","0","",""], ["1", "接口自动化测试1","0","https://marketingcentertest-1252877917.cos.ap-guangzhou.myqcloud.com/6ec8c05b57d146cea6e6309599e9d5ac.jpg","1"]])
-    def test_taskCreate(self,miniProgramVisible,name,needPushFlag,visibleCrowd,picUrl):
-        r= self.auto.taskCreate(miniProgramVisible=miniProgramVisible,name=name,needPushFlag=needPushFlag,visibleCrowd=visibleCrowd,picUrl=picUrl)
-        assert r.json()['code']=='200'
+    @pytest.mark.parametrize("miniProgramVisible,name,needPushFlag,picUrl,visibleCrowd", [["0", "1", "0", "", ""],
+                                                                                          ["1", "2", "0",
+                                                                                           "https://marketingcentertest-1252877917.cos.ap-guangzhou.myqcloud.com/6ec8c05b57d146cea6e6309599e9d5ac.jpg",
+                                                                                           "1"]])
+    def test_taskCreate(self, miniProgramVisible, name, needPushFlag, visibleCrowd, picUrl):
+        r = self.auto.taskCreate(miniProgramVisible=miniProgramVisible, name=name, needPushFlag=needPushFlag,
+                                 visibleCrowd=visibleCrowd, picUrl=picUrl)
+        assert r.json()['code'] == '200'
 
     @pytest.mark.parametrize("miniProgramVisible,name,needPushFlag,picUrl,visibleCrowd", [["0", "接口自动化测试", "0", "", ""],
                                                                                           ["1", "接口自动化测试1", "0",
@@ -46,36 +50,38 @@ class TestAuto:
         r= self.auto.taskCreate_needPushFlag(miniProgramVisible=miniProgramVisible,name=name,needPushFlag=needPushFlag,visibleCrowd=visibleCrowd,picUrl=picUrl)
         assert r.json()['code']=='200'
 
-    def test_taskModify(self):
-        eventId = "849390304411455488"
-        startTime = ""
-        endTime = ""
-        memberMobile = "13244766662"
-        memberNo = ""
-        r=self.auto.taskModify()
+    @pytest.mark.parametrize("miniProgramVisible,name,needPushFlag,picUrl,visibleCrowd", [["1", "1", "0", "https://marketingcentertest-1252877917.cos.ap-guangzhou.myqcloud.com/55f842f2e0764779a136fa94c5ff4d80.jpg", "0"],
+                                                                                          ["1", "2", "0",
+                                                                                           "https://marketingcentertest-1252877917.cos.ap-guangzhou.myqcloud.com/6ec8c05b57d146cea6e6309599e9d5ac.jpg",
+                                                                                           "1"]])
+    def test_taskModify(self, miniProgramVisible, name, needPushFlag, visibleCrowd, picUrl):
+        eventId = "867412408176058368"
+        name = "autotest" + str(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+        r=self.auto.taskModify(miniProgramVisible=miniProgramVisible, name=name, needPushFlag=needPushFlag,
+                                 visibleCrowd=visibleCrowd, picUrl=picUrl)
         assert r.json()['data'][0]['eventId'] == eventId
 
     def test_taskPub(self):
         # 取第一条任务进行推送或取消推送
-        taskId=""
+        taskId="214"
         r= self.auto.taskPub(taskId=taskId)
-        assert r.json()['code']=='0'
+        assert r.json()['code']=='200'
 
     def test_taskDelete(self):
-        taskId = ""
-        r = self.auto.taskPub(taskId=taskId)
-        assert r.json()['code']=='0'
+        taskId = "216"
+        r = self.auto.taskDelete(taskId=taskId)
+        assert r.json()['code']=='200'
 
     def test_event_category_one(self):
         topId = ""
         r = self.auto.taskPub(topId=topId)
-        assert r.json()['code']=='0'
+        assert r.json()['code']=='200'
 
     def test_find_event_category_firstone(self):
         r= self.auto.find_event_category_list()
         eventId=r.json()["data"][0]["id"]
         r1 = self.auto.find_event_category_one(eventId=eventId)
-        assert r1.json()['code'] == '0'
+        assert r1.json()['code'] == '200'
         assert r.json()['data'][0]['resourceId']==r1.json()['data'][0]['resourceId']
 
 
