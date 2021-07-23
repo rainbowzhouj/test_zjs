@@ -121,10 +121,10 @@ task_Modify:
     create_by: "周晶"
     delEventRelIds: ''
     description: ''
-    endTime: 2021-07-21 23:59
+    endTime: 2021-07-31 23:59
     eventList:
       - automationTaskId: 214
-        eventId: '867412408176058368'
+        eventId: ${eventId}
         eventName: "0721权限控制"
         eventType: '0'
         id: 701
@@ -187,7 +187,7 @@ taskTop:
   "json":
     topId: ${topId}
 
-# 任务置顶
+# 任务显示/隐藏
 taskminiAppVisible:
   "method": "post"
   "url": "${base_url}/auto/task/miniAppVisible"
@@ -237,3 +237,165 @@ taskpushPlan:
     pushWorkerList: [ ]
     targetId: 100
     targetType: '0'
+
+# 任务榜单列表
+billBoardlistPage:
+  "method": "get"
+  "url": "${base_url}/auto/billBoard/listPage"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "params":
+    pageNum: ${pageNum}
+    pageSize: ${pageSize}
+
+
+billBoardbuild:
+  "method": "post"
+  "url": "${base_url}/auto/billBoard/listPage"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    automationTaskId: '81'
+    billBoardColumnList:
+      - ranking
+      - nickName
+      - dept
+      - name
+    billboardNumber: 4
+    calculateMethod: '0'
+    endTime: '2021-07-31 16:51:35'
+    firstDimension: '1'
+    name: autobillboard
+    startTime: '2021-07-23 16:51:35'
+    userDimension: '0'
+
+billBoardpush:
+  "method": "post"
+  "url": "${base_url}/auto/common/push"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    automationTaskId: 81
+    id: 36
+    pushDate: 2021-8-02
+    pushHour: '11'
+    pushOrgList: [ ]
+    pushWorkerList:
+      - id: shrzy147221_luoxiaoxin2
+        name: "罗晓欣"
+        orgName: "区庄教学中心"
+    targetId: 36
+    targetType: '1'
+
+billBoarddetail:
+  "method": "post"
+  "url": "${base_url}/auto/billBoard/detail"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    billBoardId: '1'
+
+billBoardimportReward:
+  "method": "post"
+  "url": "${base_url}/auto/reward/importReward"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    taskId: '1'
+
+billBoard_del:
+  "method": "post"
+  "url": "${base_url}/auto/billBoard/del"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    billBoardId: '1'
+
+awarded_list:
+  "method": "post"
+  "url": "${base_url}/auto/awarded/listPage"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    pageNum: '1'
+    pageSize: "10"
+
+
+awarded_build:
+  "method": "post"
+  "url": "${base_url}/auto/awarded/listPage"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    pageNum: '1'
+
+awardedpublish:
+  "method": "post"
+  "url": "${base_url}/auto/awarded/publish"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    pageNum: '1'
+
+awarded_del:
+  "method": "post"
+  "url": "${base_url}/auto/awarded/del"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    awardedId: '1'
+
+awarded_detail:
+  "method": "post"
+  "url": "${base_url}/auto/awarded/detail"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    awardedId: '1'
+
+awarded_listPage:
+  "method": "post"
+  "url": "${base_url}/auto/awarded/listPage"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    pageNum: '1'
+    pageSize: '1'
+    name: '1'
+    secondCategoryId: '1'
+
+awarded_preview:
+  "method": "post"
+  "url": "${base_url}/auto/awarded/listPage"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    taskId: '1'
+    targetType: '1'
+    targetId: '1'
+    num: '1'
+
+queryTempData:
+  "method": "post"
+  "url": "${base_url}/auto/data/queryTempData"
+  "headers":
+    "systemtoken": ${token}
+    'Content-Type': 'application/json;charset=UTF-8'
+  "json":
+    automationTaskId: '1'
+    firstDimension: '1'
+    secondDimension: '1'
+    thirdDimension: '1'

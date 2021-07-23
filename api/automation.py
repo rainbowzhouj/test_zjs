@@ -103,13 +103,39 @@ class Auto(BaseApi):
         return self.send(self.data["taskminiAppVisible"])
 
     def taskDetail(self, taskId):
-        self.params['taskId']=taskId
+        self.params['taskId'] = taskId
         return self.send(self.data["taskDetail"])
 
     def taskoffShelf(self, taskId):
-        self.params['taskId']=taskId
+        self.params['taskId'] = taskId
         return self.send(self.data["taskoffShelf"])
 
     def taskpushPlan(self, taskId):
-        self.params['taskId']=taskId
-        return self.send(self.data["pushPlan"])
+        self.params['taskId'] = taskId
+        return self.send(self.data["taskpushPlan"])
+
+    def billBoardlistPage(self, pageNum, pageSize):
+        self.params['pageNum'] = pageNum
+        self.params['pageSize'] = pageSize
+        return self.send(self.data["billBoardlistPage"])
+
+    def billBoardbuild(self, automationTaskId, billBoardColumnList, billboardNumber, calculateMethod, startTime,
+                       endTime, name, userDimension):
+        self.params['automationTaskId'] = automationTaskId
+        self.params['billBoardColumnList'] = billBoardColumnList
+        self.params['billboardNumber'] = billboardNumber
+        self.params['calculateMethod'] = calculateMethod
+        self.params['startTime'] = startTime
+        self.params['endTime'] = endTime
+        self.params['name'] = name
+        self.params['userDimension'] = userDimension
+        return self.send(self.data["billBoardbuild"])
+
+    def billBoardpush(self):
+        return self.send(self.data["billBoardpush"])
+
+    def billBoarddetail(self):
+        return self.send(self.data["billBoarddetail"])
+
+    def billBoarddetail(self):
+        return self.send(self.data["billBoarddetail"])
