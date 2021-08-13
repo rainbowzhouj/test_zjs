@@ -61,6 +61,7 @@ class TestAuto:
                                  visibleCrowd=visibleCrowd, picUrl=picUrl)
         assert r.json()['data'][0]['eventId'] == eventId
 
+
     def test_taskPub(self):
         # 取第一条任务进行推送或取消推送
         taskId = "214"
@@ -120,17 +121,7 @@ class TestAuto:
         assert r.json()['code'] == '200'
 
     def test_billBoardpublish(self):
-        automationTaskId = '214'
-        billBoardColumnList = ["ranking", "nickName", "dept", "name"]
-        billboardNumber = "4"
-        calculateMethod = "0"
-        startTime = "2021-07-23 16:51:35"
-        endTime = "2021-07-31 16:51:35"
-        name = "autobillboard"
-        userDimension = "0"
-        r = self.auto.billBoardlistPage(automationTaskId=automationTaskId, billBoardColumnList=billBoardColumnList,
-                                        billboardNumber=billboardNumber, calculateMethod=calculateMethod,
-                                        startTime=startTime, endTime=endTime, name=name, userDimension=userDimension)
+        r = self.auto.billBoardlistPage()
         assert r.json()['code'] == '200'
 
     @pytest.mark.parametrize("mobile", [["15001731170"], ["17521151170"], ["18621614590"]])
