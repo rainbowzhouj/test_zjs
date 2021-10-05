@@ -18,7 +18,7 @@ class TestAccount:
         print(self.account.update("38", "shrzy143620_daizilu", name, "3578"))
 
     def test_find(self):
-        print(self.account.find("戴子露",""))
+        print(self.account.find("戴子",""))
 
     def test_findone(self):
         print(self.account.find_one("10"))
